@@ -1,0 +1,10 @@
+{
+  "name": "threejs-engineer",
+  "version": "0.1.0",
+  "description": "Professional Three.js engineering assistant for scenes, geometry, shaders, and animation",
+  "author": {
+    "name": "threejs-engineer",
+    "email": ""
+  },
+  "keywords": ["threejs", "webgl", "glsl", "3d", "graphics", "shaders", "animation"]
+}

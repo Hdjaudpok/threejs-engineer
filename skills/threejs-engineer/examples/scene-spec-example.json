@@ -1,0 +1,148 @@
+{
+  "projectName": "Product Landing Page",
+  "stack": "vanilla",
+  "canvasMode": "fullscreen",
+
+  "camera": {
+    "type": "perspective",
+    "fov": 45,
+    "near": 0.1,
+    "far": 100,
+    "position": [0, 2, 8],
+    "lookAt": [0, 0, 0]
+  },
+
+  "environment": {
+    "background": "color",
+    "backgroundValue": "#0a0a0a",
+    "fog": {
+      "type": "linear",
+      "color": "#0a0a0a",
+      "near": 10,
+      "far": 50
+    }
+  },
+
+  "lighting": [
+    {
+      "type": "ambient",
+      "color": "#ffffff",
+      "intensity": 0.15
+    },
+    {
+      "type": "directional",
+      "color": "#ffffff",
+      "intensity": 1.2,
+      "position": [5, 10, 5],
+      "castShadow": true,
+      "shadow": {
+        "mapSize": 2048,
+        "camera": {
+          "near": 0.1,
+          "far": 50,
+          "left": -10,
+          "right": 10,
+          "top": 10,
+          "bottom": -10
+        }
+      }
+    },
+    {
+      "type": "point",
+      "color": "#4488ff",
+      "intensity": 0.5,
+      "position": [-3, 3, 2]
+    }
+  ],
+
+  "assets": [
+    {
+      "id": "heroProduct",
+      "type": "gltf",
+      "src": "/assets/models/product.glb",
+      "position": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "receiveShadow": true,
+      "castShadow": true,
+      "animations": false
+    },
+    {
+      "id": "floor",
+      "type": "gltf",
+      "src": "/assets/models/floor.glb",
+      "position": [0, -1, 0],
+      "scale": [5, 1, 5],
+      "receiveShadow": true,
+      "castShadow": false
+    },
+    {
+      "id": "studioEnv",
+      "type": "hdr",
+      "src": "/assets/envMaps/studio.hdr"
+    }
+  ],
+
+  "effects": {
+    "postprocessing": ["bloom", "fxaa"],
+    "shaders": []
+  },
+
+  "interactions": [
+    {
+      "type": "hover",
+      "target": "heroProduct",
+      "effect": "highlight"
+    },
+    {
+      "type": "click",
+      "target": "heroProduct",
+      "action": "openPanel"
+    }
+  ],
+
+  "animation": {
+    "type": "timeline",
+    "library": "gsap",
+    "scrollDriven": true,
+    "sections": [
+      {
+        "name": "intro",
+        "trigger": ".section-intro",
+        "camera": {
+          "position": [0, 2, 8],
+          "lookAt": [0, 0, 0]
+        }
+      },
+      {
+        "name": "details",
+        "trigger": ".section-details",
+        "camera": {
+          "position": [3, 1, 4],
+          "lookAt": [0, 0.5, 0]
+        },
+        "objects": [
+          {
+            "target": "heroProduct",
+            "property": "rotation.y",
+            "value": 1.57
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "trigger": ".section-contact",
+        "camera": {
+          "position": [0, 5, 2],
+          "lookAt": [0, 0, 0]
+        }
+      }
+    ]
+  },
+
+  "constraints": {
+    "maxBundleSizeMB": 5,
+    "targetFPS": 60,
+    "mobileSupport": true,
+    "maxDrawCalls": 150
+  }
+}
