@@ -1,23 +1,16 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "threejs-engineer",
-  "version": "1.0.0",
-  "description": "Local marketplace for Three.js creative engineering plugin",
+  "name": "threejs-marketplace",
   "owner": {
-    "name": "jules",
-    "email": ""
+    "name": "Hdjaudpok"
   },
   "plugins": [
     {
       "name": "threejs-engineer",
       "description": "Professional Three.js engineering assistant for scenes, geometry, shaders, and animation",
-      "version": "0.1.0",
-      "author": {
-        "name": "jules",
-        "email": ""
-      },
-      "source": ".",
-      "category": "development"
+      "source": {
+        "source": "github",
+        "repo": "Hdjaudpok/threejs-engineer"
+      }
     }
   ]
 }
