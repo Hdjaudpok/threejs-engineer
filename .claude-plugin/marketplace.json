@@ -7,10 +7,7 @@
     {
       "name": "threejs-engineer",
       "description": "Professional Three.js engineering assistant for scenes, geometry, shaders, and animation",
-      "source": {
-        "source": "github",
-        "repo": "Hdjaudpok/threejs-engineer"
-      }
+      "source": "https://github.com/Hdjaudpok/threejs-engineer.git"
     }
   ]
 }
